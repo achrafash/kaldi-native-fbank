@@ -1,4 +1,4 @@
-build
+guild
 dist
 *.egg-info
 **/__pycache__
@@ -6,3 +6,6 @@ build-arm-linux-gnueabihf
 
 # vim
 *.sw?
+
+node_modules/
+build/
