@@ -4,6 +4,11 @@
   "description": "Kaldi-compatible online fbank feature extractor without external dependencies.",
   "main": "index.js",
   "gypfile": true,
+  "files": [
+    "index.js",
+    "build/Release/fbank.node",
+    "binding.gyp"
+  ],
   "scripts": {
     "build": "node-gyp clean && node-gyp configure && node-gyp rebuild"
   },

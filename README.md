@@ -2,6 +2,7 @@ Link to original repo: https://github.com/csukuangfj/kaldi-native-fbank
 
 1. install the dependencies
 ```bash
+$ cd native/diarization/kaldiFbank
 $ npm install
 ```
 
@@ -10,9 +11,9 @@ $ npm install
 $ npm run build
 ```
 
-3. install the package in the app
+3. install the fbank package in the app directory
 ```bash
-cd app
+cd ../../../app
 npm install ../native/diarization/kaldiFbank
 ```
 
@@ -22,7 +23,7 @@ npm install electron-rebuild
 npx electron-rebuild
 ```
 
-5. run in the app
+5. use in the app
 ```js
 const kaldi = require('kaldi-fbank')
 

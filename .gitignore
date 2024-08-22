@@ -9,3 +9,4 @@ build-arm-linux-gnueabihf
 
 node_modules/
 build/
+bin/
