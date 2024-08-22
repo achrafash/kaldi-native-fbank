@@ -1,12 +1,11 @@
 {
   "name": "kaldi-fbank",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Kaldi-compatible online fbank feature extractor without external dependencies.",
   "main": "index.js",
   "gypfile": true,
   "files": [
     "index.js",
-    "build/Release/fbank.node",
     "binding.gyp"
   ],
   "scripts": {
