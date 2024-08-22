@@ -6,11 +6,12 @@
   "gypfile": true,
   "files": [
     "index.js",
+    "build/Release/**",
     "binding.gyp"
   ],
   "scripts": {
-    "install": "npm i node-addon-api && node-gyp configure",
-    "postinstall": "node-gyp rebuild",
+    "preinstall": "npm install node-addon-api && node-gyp configure",
+    "install": "node-gyp rebuild",
     "build": "node-gyp clean && node-gyp configure && node-gyp rebuild"
   },
   "keywords": [],
