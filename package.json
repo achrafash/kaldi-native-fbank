@@ -7,10 +7,12 @@
   "files": [
     "index.js",
     "build/Release/**",
+    "kaldi-native-fbank/csrc/**/*.h",
+    "kaldi-native-fbank/csrc/**/*.cc",
     "binding.gyp"
   ],
   "scripts": {
-    "install": "prebuild-install || node-gyp rebuild --release",
+    "install": "prebuild-install || node-gyp rebuild",
     "build": "node-gyp rebuild",
     "build:debug": "node-gyp rebuild --debug"
   },
