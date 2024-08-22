@@ -10,6 +10,8 @@
     "binding.gyp"
   ],
   "scripts": {
+    "install": "npm i node-addon-api && node-gyp configure",
+    "postinstall": "node-gyp rebuild",
     "build": "node-gyp clean && node-gyp configure && node-gyp rebuild"
   },
   "keywords": [],
