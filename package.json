@@ -10,8 +10,9 @@
     "binding.gyp"
   ],
   "scripts": {
-    "install": "npm install node-addon-api && node-gyp rebuild",
-    "build": "node-gyp clean && node-gyp configure && node-gyp rebuild"
+    "install": "prebuild-install || node-gyp rebuild --release",
+    "build": "node-gyp rebuild",
+    "build:debug": "node-gyp rebuild --debug"
   },
   "keywords": [],
   "author": "",
@@ -19,5 +20,13 @@
   "dependencies": {
     "node-addon-api": "^8.1.0",
     "node-gyp": "^10.2.0"
+  },
+  "devDependencies": {
+    "prebuild-install": "^7.1.2"
+  },
+  "binary": {
+    "napi_versions": [
+      8
+    ]
   }
 }
