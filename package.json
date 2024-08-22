@@ -7,6 +7,7 @@
   "files": [
     "index.js",
     "build/Release/**",
+    "addon.cc",
     "kaldi-native-fbank/csrc/**/*.h",
     "kaldi-native-fbank/csrc/**/*.cc",
     "binding.gyp"
