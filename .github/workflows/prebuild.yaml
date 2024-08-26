@@ -38,4 +38,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: fbank-${{ matrix.os }}-${{ matrix.arch }}
-          path: bin/
+          path: prebuilds/
