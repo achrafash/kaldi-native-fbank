@@ -1,0 +1,41 @@
+name: Prebuild Binaries
+
+on: [push, pull_request]
+
+jobs:
+  prebuild:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, macos-latest, windows-latest]
+        node-version: [16, 18]
+        arch: [x64, arm64]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Set up architecture for macOS
+        if: matrix.os == 'macos-latest'
+        run: |
+          if [ "${{ matrix.arch }}" == "arm64" ]; then
+            sudo softwareupdate --install-rosetta --agree-to-license
+          fi
+        shell: bash
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Prebuild binaries
+        run: npx prebuild --strip --verbose
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: fbank-${{ matrix.os }}-${{ matrix.arch }}
+          path: bin/

@@ -15,7 +15,7 @@
   "scripts": {
     "install": "prebuild-install || node-gyp rebuild",
     "build": "node-gyp rebuild",
-    "build:debug": "node-gyp rebuild --debug"
+    "prebuild": "prebuild --all --strip --verbose"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +25,7 @@
     "node-gyp": "^10.2.0"
   },
   "devDependencies": {
+    "prebuild": "^13.0.1",
     "prebuild-install": "^7.1.2"
   },
   "binary": {
