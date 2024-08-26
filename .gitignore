@@ -10,3 +10,4 @@ build-arm-linux-gnueabihf
 node_modules/
 build/
 bin/
+.DS_Store
