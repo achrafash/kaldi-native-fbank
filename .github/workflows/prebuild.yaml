@@ -7,10 +7,9 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        platform:
-          - macos-latest/x64
-          - macos-latest/arm64
-          - windows-latest
+        os: [macos-latest, windows-latest]
+        node-version: [18]
+        arch: [x64, arm64]
 
     steps:
       - name: Checkout code
